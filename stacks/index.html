@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stacks</title>
+
+        <script src="./Stack.js"></script>
+
+        <script>
+            <span class="let">let</span> stack = new Stack();
+
+            stack.hasElements();
+            stack.push(5);
+            stack.push(7);
+            stack.last();
+            stack.push(11);
+            stack.hasElements();
+            stack.size();
+            stack.pop();
+            stack.last();
+            stack.pop();
+            stack.pop();
+            stack.pop();
+            stack.print();
+        </script>
+
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="information">
+            <h1>Stacks:</h1>
+
+            <p>A stack is an ordered collection of items that follows <strong>LIFO (Last In First Out)</strong> principle.</p>
+
+            <h2>Other types of Stacks</h2>
+
+            <ul>
+                <li></li>
+            </ul>
+
+            <h2>Methods:</h2>
+
+            <ul>
+                <li>
+                    <strong>push(element (s)):</strong> This adds a new element (or several elements) to the top of the stack.
+                </li>
+                <li>
+                    <strong>pop():</strong> Removes the top element from the stack.
+                </li>
+                <li>
+                    <strong>last():</strong> This returns the top element from the stack.
+                </li>
+                <li>
+                    <strong>hasElements():</strong> Returns true if the stack contains at least 1 element and false if the stack is empty.
+                </li>
+                <li>
+                    <strong>clear():</strong> Removes all the elements of the stack.
+                </li>
+                <li>
+                    <strong>size():</strong> Returns the number of elements in the stack.
+                </li>
+                <li>
+                    <strong>print():</strong> Prints the current stack elements.
+                </li>
+            </ul>
+            
+            <h2>Real life Example</h2>
+
+            <p>
+                <img 
+                    src="http://images.clipartpanda.com/stack-of-books-clip-art-xigR9gyiA.jpeg"
+                    style="max-width: 300px;" 
+                />
+            </p>
+
+            <h2>Code</h2>
+
+            <pre class="code">
+    <span class="function">function</span> Stack() {
+        <span class="let">let</span> items = [];
+
+        <span class="this">this</span>.push = (element) => {
+            <span class="console">console.log</span>('> Adding new element: ', element);
+            items.push(element);
+        };
+
+        <span class="this">this</span>.pop = () => {
+            if (<span class="this">this</span>.hasElements()) {
+                const removedElement = items.pop();
+
+                <span class="console">console.log</span>('> Removing last element (pop): ', removedElement);
+
+                <span class="return">return</span> removedElement;
+            } else {
+                <span class="console">console.log</span>('> The stack is empty there is not more elements to remove');
+            }
+        };
+
+        <span class="this">this</span>.last = () => {
+            const lastElement = items[items.length - 1];
+
+            <span class="console">console.log</span>('> Getting last element: ', lastElement);
+
+            <span class="return">return</span> lastElement;
+        };
+
+        <span class="this">this</span>.hasElements = () => {
+            const elements = items.length;
+
+            <span class="console">console.log</span>(`> ${elements > 0 ? 'The Stack has elements' : 'The Stack is empty'}`);
+
+            <span class="return">return</span> elements > 0;
+        };
+
+        <span class="this">this</span>.size = () => {
+            const size = items.length;
+
+            <span class="console">console.log</span>('> The stack size is: ', size);
+            
+            <span class="return">return</span> size;
+        };
+
+        <span class="this">this</span>.clear = () => {
+            <span class="console">console.log</span>('> Clearing the stack');
+            items = [];
+        };
+
+        <span class="this">this</span>.print = () => {
+            <span class="console">console.log</span>(`> Current Stack: [${items.toString()}]`);
+        };
+    }
+            </pre>
+        </div>
+
+        <div class="execute">
+            
+        </div>
+    </body>
+</html>
