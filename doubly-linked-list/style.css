@@ -1,0 +1,18 @@
+body {
+	background-color: white;
+	font-size: 1rem;
+}
+
+.code .function,
+.code .let,
+.code .console {
+	color: blue;
+}
+
+.code .this {
+	color: orange;
+}
+
+.code .return {
+	color: red;
+}
